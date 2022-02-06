@@ -3,7 +3,7 @@ import React from "react";
 const ShoppingHeader = () => {
   return (
     <nav className="shopping-header">
-      <div className="shopping-header__logo">LOGO</div>
+      <div className="shopping-header__logo">Furniture Land</div>
       <ul>
         <li className="shopping-header__item">Seating</li>
         <li className="shopping-header__item">Desks & Tables</li>
