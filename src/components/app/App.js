@@ -1,23 +1,39 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "../nav/Nav";
 import Footer from "../footer/Footer";
-import HeroImage from "../home/HeroImage";
-import ProductBlurb from "../home/ProductBlurb";
-import ProductStats from "../home/ProductStats";
-import BigQuote from "../home/BigQuote";
-import InspirationBoard from "../home/InspirationBoard";
 import "./App.css";
+
+// Pages
+import Home from "../home/Home";
+import ProductCategory from "../product-category/ProductCategory";
 
 export function App() {
   return (
-    <div className="app">
-      <Nav />
-      <HeroImage />
-      <ProductBlurb /> {/* white */}
-      <ProductStats /> {/* dark blue */}
-      <InspirationBoard /> {/* white */}
-      <BigQuote /> {/* orange */}
-      <Footer />
-    </div>
+    <React.StrictMode>
+      <Router>
+        <div className="app">
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/seating"
+              element={<ProductCategory products={[]} />}
+            />
+            <Route
+              path="/desks-and-tables"
+              element={<ProductCategory products={[]} />}
+            />
+            <Route
+              path="/lighting"
+              element={<ProductCategory products={[]} />}
+            />
+            {/* <Route path="/*" element={<PageNotFound />} /> */}
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </React.StrictMode>
   );
 }
 
