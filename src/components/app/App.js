@@ -18,15 +18,15 @@ export function App() {
             <Route path="/" element={<Home />} />
             <Route
               path="/seating"
-              element={<ProductCategory products={[]} />}
+              element={<ProductCategory productType="seating" />}
             />
             <Route
               path="/desks-and-tables"
-              element={<ProductCategory products={[]} />}
+              element={<ProductCategory productType="tables" />}
             />
             <Route
               path="/lighting"
-              element={<ProductCategory products={[]} />}
+              element={<ProductCategory productType="lighting" />}
             />
             {/* <Route path="/*" element={<PageNotFound />} /> */}
           </Routes>
