@@ -4,8 +4,10 @@ const ProductCategory = ({ productType }) => {
   const [products, setProducts] = useState(["one", "two", "three"]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/products")
-      // fetch("https://furniture-land-abentzen.herokuapp.com/products")
+    // let REST_API_URL = "http://localhost:8080/products";
+    let REST_API_URL = "https://furniture-land-abentzen.herokuapp.com/products";
+
+    fetch(REST_API_URL)
       .then((response) => response.json())
       .then((data) => data[productType])
       .then((data) => setProducts(data));
